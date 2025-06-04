@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de JavaScript</title>
+</head>
+<body>
+    <p>Digite dois números:</p>
+    <input id="num1">
+    <input id="num2">
+    <br>
+    <button onclick="verificarMaior()">Verificar maior numero</button>
+    <br>
+    <button onclick="calcPotencia()">Verificar a potência</button>
+    <br>
+    <button onclick="calcFatorial()">Verificar o fatorial</button>
+    <br>
+    <button onclick="Acric()">Verificar a area do circulo. (Aqui apenas o primeiro valor irá funcionar)</button>
+    <br>
+    <button onclick="npar()">Verificar numeros pares</button>
+    <p id="resultado"></p>
+
+    <script>
+    // Questão 1
+        function verificarMaior() {
+            let num1 = Number(document.getElementById("num1").value)
+            let num2 = Number(document.getElementById("num2").value)
+
+            if (num1 > num2) {
+                document.getElementById("resultado").innerText = "O maior número é: " + num1
+            } else {
+                document.getElementById("resultado").innerText = "O maior número é: " + num2
+            }
+        }
+    // Questão 2
+        function calcPotencia(){
+            let num1 = Number(document.getElementById("num1").value)
+            let num2 = Number(document.getElementById("num2").value)
+
+            resultado = num1 ** num2
+
+            document.getElementById("resultado").innerHTML = "O primeiro elevado a potencia do segundo é : "+ resultado
+        }
+    // Questão 3
+        function fatorial(n) {
+            let resultado = 1
+            for (let i = n; i > 1; i--) {
+                resultado *= i
+            }
+            return resultado;
+        }
+        function calcFatorial() {
+            let num1 = Number(document.getElementById("num1").value)
+            let num2 = Number(document.getElementById("num2").value)
+
+            document.getElementById("resultado").innerText = "Fatorial de " + num1 + ": " + fatorial(num1) + " | Fatorial de " + num2 + ": " + fatorial(num2)
+        }
+    // Questão 4
+        function Acric(){
+            let raio = Number(document.getElementById("num1").value)
+            resultado  = 2 * 3.14 * (raio**2)
+            document.getElementById("resultado").innerHTML = "A área do circulo é: "+ resultado
+        }
+    
+    // Questão 5
+        function npar() {
+            let num1 = Number(document.getElementById("num1").value)
+            let num2 = Number(document.getElementById("num2").value)
+            let resultado = ""
+
+            if (num1 % 2 === 0) {
+                resultado += num1 + " é par. "
+            }
+            if (num2 % 2 === 0) {
+                resultado += num2 + " é par. "
+            }
+            if (resultado === "") {
+                resultado = "Nenhum dos números é par."
+            }
+            document.getElementById("resultado").innerHTML = resultado
+        }
+
+    </script>
+</body>
+</html>
